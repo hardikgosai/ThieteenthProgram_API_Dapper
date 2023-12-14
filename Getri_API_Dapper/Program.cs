@@ -1,8 +1,12 @@
+using Getri_API_Dapper.DAL;
+using Getri_API_Dapper.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddTransient<IEmployeeRepository, EmployeeDAL>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
